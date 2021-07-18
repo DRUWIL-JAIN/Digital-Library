@@ -6,9 +6,19 @@ async function signUp() {
     const yearOfGrad = document.getElementById('yearOfGrad').value
     const prn = document.getElementById('prn').value
     const gender = document.getElementById('gender').value
-    if(gender=="" || branch=="")
+    if(gender=="" || branch=="" || name=="" )
     {
         window.alert("Please fill complete details")
+        return
+    }
+    if(yearOfGrad.length<3)
+    {
+        window.alert("Please Enter Year in 20-- Format")
+        return
+    }
+    if(!email.includes("@mitaoe.ac.in"))
+    {
+        window.alert("Please Enter email of @mitaoe.ac.in domain only")
         return
     }
     var isSignedIn = false;
@@ -34,6 +44,7 @@ async function signUp() {
             yearOfGrad: yearOfGrad,
             Gender: gender
         });
+        console.log("SignedIn")
         //window.location.href = '/home.html';
     }
 }
@@ -41,6 +52,11 @@ async function signIn() {
     const email = document.getElementById('email').value
     const password = document.getElementById('password').value
     var isLoggedIn = false;
+    if(!email.includes("@mitaoe.ac.in"))
+    {
+        window.alert("Please Enter email of @mitaoe.ac.in domain only")
+        return
+    }
     var user;
     await firebase.auth().signInWithEmailAndPassword(email, password)
         .then((userCredential) => {
@@ -75,6 +91,7 @@ async function signIn() {
             yearOfGrad: yearOfGrad,
             Gender: gender
         });
+        console.log("Logedin")
         //window.location.href = '/home.html';
     }
 }
