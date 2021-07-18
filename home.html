@@ -1,44 +1,79 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="eng">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;500;600&display=swap" rel="stylesheet">
-    <title>Home</title>
+    <title>Digital Library | Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/home.css">
 </head>
-
-
 <body>
-    
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
-    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-app.js"></script>
+ 
+<!-- Vertical navbar -->
+<div class="vertical-nav bg-white" id="sidebar" style="overflow-y: auto;">
+  <div class="py-2 px- mb-4 bg-primary text-center">
+      <img loading="lazy" src="/img/user.svg" alt="..." width="80" height="80" class="mr-3 rounded-circle img-thumbnail shadow-sm">
+    <div class="media" >
+      <div class="media-body">
+        <h4 class="m-0 text-light" id="name">Name</h4>
+        <p class="font-weight-normal text-light mb-2" id="email">email@email.com</p>
+        <button class="btn btn-light px-3 mb-2" onclick="logout()">Log Out</button>
+      </div>
+    </div>
+  </div>
 
-    <!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries -->
-    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-analytics.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-auth.js"></script>
-    <script src="./javascripts/auth.js"></script>
-    <script>
-        // Your web app's Firebase configuration
-        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-        var firebaseConfig = {
-            apiKey: "AIzaSyCYRsL99a324i7VDFQaw2xoF3fuqbvV_hw",
-            authDomain: "digitallibrary-mitaoe.firebaseapp.com",
-            projectId: "digitallibrary-mitaoe",
-            storageBucket: "digitallibrary-mitaoe.appspot.com",
-            messagingSenderId: "817846815363",
-            appId: "1:817846815363:web:e7cb60795b1998bb3be9b6",
-            measurementId: "G-8TFKGR4D7M"
-        };
-        // Initialize Firebase
-        firebase.initializeApp(firebaseConfig);
-        firebase.analytics();
-    </script>
+  <p class="text-black font-weight-bold text-uppercase px-3 small pb-4 mb-0">Content</p>
+
+  <ul class="nav flex-column bg-white mb-0">
+    <li class="nav-item">
+      <a href="#" class="nav-link text-dark bg-light">
+                <i class="fa fa-book mr-3 text-primary fa-fw"></i>
+                EBooks
+            </a>
+    </li>
+    <li class="nav-item">
+      <a href="#" class="nav-link text-dark">
+                <i class="fa fa-video-camera mr-3 text-primary fa-fw"></i>
+                NPTL
+            </a>
+    </li>
+    <li class="nav-item">
+      <a href="#" class="nav-link text-dark">
+                <i class="fa fa-paperclip mr-3 text-primary fa-fw"></i>
+                Past Year Question Papers
+            </a>
+    </li>
+    <li class="nav-item">
+      <a href="#" class="nav-link text-dark">
+                <i class="fa fa-file mr-3 text-primary fa-fw"></i>
+                Project Reports
+            </a>
+    </li>
+  </ul>
+</div>
+<!-- End vertical navbar -->
+
+
+<!-- Page content holder -->
+<div class="page-content p-3" id="content">
+  <!-- Toggle button -->
+  <button id="sidebarCollapse" type="button" class="btn btn-light bg-white rounded-pill shadow-sm px-4 mb-4"><i class="fa fa-bars mr-2"></i><small class="text-uppercase font-weight-bold"></small></button>
+
+  <!-- Demo content -->
+  
+</div>
+<!-- End demo content -->
+<script>
+  $(function() { 
+    $('#sidebarCollapse').on('click', function() {
+      $('#sidebar, #content').toggleClass('active');
+    });
+  });
+</script>
+<script src="/javascripts/bootstrap.bundle.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="/javascripts/nav.js"></script>
 </body>
-
 </html>
+

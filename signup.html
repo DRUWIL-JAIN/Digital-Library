@@ -6,77 +6,77 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;500;600&display=swap" rel="stylesheet">
     <title>Sign Up</title>
 </head>
 <style>
-    body {
-        margin: 0;
-        overflow: hidden;
-        height: 100vh;
-    }
-
-    .bg-img::after {
-        content: "";
-        display: block;
-        width: 100%;
-        height: 100%;
-        background-color: #3c55f5;
-        opacity: 0.1;
-    }
-
     .bg-img {
-        background: url(./img/signup.svg);
-        background-size: 60%;
-        border-right: 1px solid rgb(187, 187, 187);
-        background-repeat: no-repeat;
-        background-position: center;
-    }
+    background: url(./img/signup.svg);
+    background-size: 60%;
+    border-right: 1px solid rgb(187, 187, 187);
+    background-repeat: no-repeat;
+    background-position: center;
+}
 </style>
 
 <body>
     <main>
-        <div class="row">
-            <div class="col-md-4 p-0" style="height: 100vh;align-items: center;display: flex;justify-content: center;">
+        <div class="row m-0">
+            <div class="col-md-4 p-0" style="align-items: center;display: flex;justify-content: center;">
                 <div class="container" style="width: 85%;">
                     <h1 class="fw-bold mb-3">Sign Up</h1>
                     <form>
                         <!-- Name -->
-                        <div class="mb-3">
+                        <div class="mb-2">
                             <label for="inputName" class="form-label">Your Name</label>
                             <input type="text" class="form-control" id="name" placeholder="First & Last Name">
                         </div>
 
+                         <!-- Gender -->
+                         <div class="mb-2">
+                            <label for="inputBranch">Gender</label>
+                            <select class="form-select" aria-label="Default select example" id="gender">
+                                <option value="">Select</option>
+                                <option value="1">Male</option>
+                                <option value="2">Female</option>
+                                <option value="3">Other</option>
+                            </select>
+                        </div>
                         <!-- Branch -->
-                        <div class="mb-3">
+                        <div class="mb-2">
                             <label for="inputBranch">Your Branch</label>
                             <select class="form-select" aria-label="Default select example" id="branch">
-                                <option selected>Computer Scinece</option>
-                                <option value="1">Information Technology</option>
-                                <option value="2">Mechanical</option>
-                                <option value="3">E&TC</option>
+                                <option value="">Select</option>
+                                <option value="1">Computer Science</option>
+                                <option value="2">Information Technology</option>
+                                <option value="3">Mechanical</option>
+                                <option value="4">E&TC</option>
+                                <option value="5">ETX</option>
+                                <option value="6">Civil</option>
+                                <option value="7">Chemical</option>
                             </select>
                         </div>
                         <!-- Email -->
-                        <div class="mb-3">
+                        <div class="mb-2">
                             <label for="exampleInputEmail1" class="form-label">Email Address</label>
                             <input type="email" class="form-control" id="email"
                                 aria-describedby="emailHelp" placeholder="Official Email Address">
                         </div>
                         <!-- Year of Graduation -->
-                        <div class="mb-3">
+                        <div class="mb-2">
                             <label for="inputGradyear" class="form-label">Year of Graduation</label>
                             <input type="number" class="form-control" id="yearOfGrad" placeholder="For eg 2021">
                         </div>
                         <!-- PRN-->
-                        <div class="mb-3">
+                        <div class="mb-2">
                             <label for="inputPRN" class="form-label">Your PRN</label>
                             <input type="number" class="form-control" id="prn" placeholder="10 Digits">
                         </div>
                         <!-- Password -->
-                        <div class="mb-3">
+                        <div class="mb-2">
                             <label for="exampleInputPassword1" class="form-label">Password</label>
                             <input type="password" class="form-control" id="password"
                                 placeholder="Atleast 6 Charachters">
