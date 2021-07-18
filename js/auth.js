@@ -6,6 +6,11 @@ async function signUp() {
     const yearOfGrad = document.getElementById('yearOfGrad').value
     const prn = document.getElementById('prn').value
     const gender = document.getElementById('gender').value
+    if(gender=="" || branch=="")
+    {
+        window.alert("Please fill complete details")
+        return
+    }
     var isSignedIn = false;
     await firebase.auth().createUserWithEmailAndPassword(email, password)
         .then((userCredential) => {
@@ -29,7 +34,7 @@ async function signUp() {
             yearOfGrad: yearOfGrad,
             Gender: gender
         });
-        window.location.href = '/home.html';
+        //window.location.href = '/home.html';
     }
 }
 async function signIn() {
