@@ -29,6 +29,7 @@ async function signUp() {
         .then((userCredential) => {
             isSignedIn = true;
             sendVerificationEmail()
+            window.alert("Signup successful.\nPlease check your inbox to verify your email id")
         })
         .catch((error) => {
             isSignedIn = false;
@@ -55,7 +56,6 @@ async function signUp() {
 const sendVerificationEmail = () => {
     Auth.currentUser.sendEmailVerification()
         .then(() => {
-            window.alert("Signup successful.\nPlease check your inbox to verify your email id")
             window.location.href = "/index.html";
         })
         .catch(error => {
