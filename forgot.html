@@ -31,11 +31,11 @@
                     <form>
                         <div class="mb-3">
                             <label for="exampleInputEmail1" class="form-label">Email Address</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1"
+                            <input type="email" class="form-control" id="email"
                                 aria-describedby="emailHelp">
                         </div>
                         <div class="d-grid gap-2">
-                            <button class="btn btn-primary mt-2 " type="button">Reset</button>
+                            <button class="btn btn-primary mt-2 " id="button" type="button" onclick="forgotpass()">Reset</button>
                         </div>
                     </form>
                 </div>
@@ -48,6 +48,26 @@
             <!--column 2-->
         </div>
     </main>
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-analytics.js"></script>
+    <script>
+        var firebaseConfig = {
+            apiKey: "AIzaSyCYRsL99a324i7VDFQaw2xoF3fuqbvV_hw",
+            authDomain: "digitallibrary-mitaoe.firebaseapp.com",
+            projectId: "digitallibrary-mitaoe",
+            storageBucket: "digitallibrary-mitaoe.appspot.com",
+            messagingSenderId: "817846815363",
+            appId: "1:817846815363:web:e7cb60795b1998bb3be9b6",
+            measurementId: "G-8TFKGR4D7M"
+        };
+        firebase.initializeApp(firebaseConfig);
+    </script>
+
+    <script>
+        const analytics = firebase.analytics()
+    </script>
+    <script src="/js/forgotpass.js"></script>
 </body>
 
 </html>
